@@ -1,0 +1,41 @@
+<div class="container">
+  <a routerLink="/crear" class="btn btn-primary mt-5">Agregar nuevo</a>
+  <div class="card mt-2">
+    <div class="card-header">
+      <h3 class="text-primary" >Listado de Usuarios</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped table-bordered shadow">
+        <thead class="bg-primary">
+          <tr>
+            <th>ID</th>
+            <th>Nombre empleado</th>
+            <th>Correo</th>
+            <th width="240px">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleados; let iControl=index;">
+            <td>{{empleado.id}}</td>
+            <td>{{empleado.nombre | titlecase }} {{empleado.apellidos | titlecase }} </td>
+            <td>{{empleado.correo}}</td>
+            <td>
+              <a routerLink="/editar/{{empleado.id}}" class="btn btn-info"
+                >Editar</a
+              >&nbsp;
+              <button
+                class="btn btn-danger"
+                [swal]="{ title: 'Eliminar Dato', 
+                text:'Esta seguro de elimar el registro??..',
+                 icon:'question', showCancelButton: true, focusCancel:true }"
+                (confirm)="eliminarEmpleado(empleado.id, iControl)"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

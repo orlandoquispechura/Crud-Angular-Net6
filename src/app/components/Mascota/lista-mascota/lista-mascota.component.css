@@ -1,0 +1,7 @@
+.boton-eliminar{
+    color: red;
+}
+
+.boton-eliminar:hover{
+   cursor: pointer;
+}

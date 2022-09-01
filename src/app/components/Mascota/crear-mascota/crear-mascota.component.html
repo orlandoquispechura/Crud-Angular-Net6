@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="text-primary" >Registrar nueva mascota</h3>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="formularioMascota" (ngSubmit)="enviarDatos()" >
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" formControlName="nombre"/>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="genero" class="form-label">Género</label>
+              <input type="text" class="form-control" formControlName="genero"/>
+            </div>
+          </div>
+        </div>
+        <div class="row"> 
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="peso" class="form-label">Peso</label>
+              <input type="number" class="form-control"formControlName="peso" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="precio" class="form-label">Precio</label>
+              <input type="number" class="form-control" formControlName="precio" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" value="Registrar" class="btn btn-success">&nbsp;
+                <a routerLink="/mascotas" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
